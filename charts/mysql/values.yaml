@@ -1,15 +1,15 @@
 replicaCount: 1
 
 image:
-  repository: mongo
+  repository: mysql
+  tag: "8.0"
   pullPolicy: IfNotPresent
-  tag: "7.0"
 
 storage:
   size: 2Gi
 
 service:
-  port: 27017
+  port: 3306
 
 resources:
   requests:
@@ -18,3 +18,4 @@ resources:
   limits:
     cpu: 500m
     memory: 1Gi
+    

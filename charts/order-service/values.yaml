@@ -1,15 +1,13 @@
 replicaCount: 1
 
 image:
-  repository: mongo
+  repository: 427064007409.dkr.ecr.eu-central-1.amazonaws.com/order-service
   pullPolicy: IfNotPresent
-  tag: "7.0"
-
-storage:
-  size: 2Gi
+  tag: "latest"
 
 service:
-  port: 27017
+  type: ClusterIP
+  port: 8081
 
 resources:
   requests:
@@ -17,4 +15,4 @@ resources:
     memory: 512Mi
   limits:
     cpu: 500m
-    memory: 1Gi
+    memory: 768Mi

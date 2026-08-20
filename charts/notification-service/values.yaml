@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: 427064007409.dkr.ecr.eu-central-1.amazonaws.com/notification-service
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 8083
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 768Mi

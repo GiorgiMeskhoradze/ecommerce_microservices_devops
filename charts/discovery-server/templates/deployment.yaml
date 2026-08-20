@@ -21,4 +21,4 @@ spec:
           ports:
             - containerPort: {{ .Values.service.port }}
           resources: 
-            {{- toYaml .Values.resources | nindent 14 }}
+            {{- toYaml .Values.resources | nindent 12 }}
