@@ -54,3 +54,24 @@ HELP.md
 
 # Draw.io
 *.drawio
+
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Secrets (never commit real credentials)
+secrets/
+
+# Helm
+charts/*/charts/*.tgz
