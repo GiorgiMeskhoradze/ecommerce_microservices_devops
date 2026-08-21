@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: discovery-server
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/GiorgiMeskhoradze/ecommerce_microservices_devops.git
+    targetRevision: main
+    path: charts/discovery-server
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ecommerce
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
