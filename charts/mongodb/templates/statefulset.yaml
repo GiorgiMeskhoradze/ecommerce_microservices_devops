@@ -18,28 +18,29 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy}}
           ports:
-            containerPort: {{ .Values.service.port}}
+            - containerPort: {{ .Values.service.port}}
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: mongodb-credintials
+                  name: mongodb-credentials
                   key: mongodb-username
             - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mongodb-credintials
+                  name: mongodb-credentials
                   key: mongodb-password
           volumeMounts:
             - name: mongodb-data
-              mountpath: /data/db
+              mountPath: /data/db
           resources:
             {{- toYaml .Values.resources | nindent 12}}
   volumeClaimTemplates:
     - metadata:
-		    name: mongodb-data
-			spec:
-			  accessModes: ["ReadWriteOnce"]
-				resources:
-				  request:
-					  storage: {{ .Values.storage.size }}
+        name: mongodb-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: gp2
+        resources:
+          requests:
+            storage: {{ .Values.storage.size }}

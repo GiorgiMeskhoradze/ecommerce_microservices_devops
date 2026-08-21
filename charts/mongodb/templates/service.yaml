@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: mongodb
 spec:
-  ClusterIP: none
+  clusterIP: None
   selector:
     app: mongodb
   ports:
