@@ -1,0 +1,13 @@
+name: CI - order-service
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'order-service/**'
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/_reusable-build.yaml
+    with:
+      service_name: order-service

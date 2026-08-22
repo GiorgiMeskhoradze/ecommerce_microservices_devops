@@ -1,0 +1,13 @@
+name: CI - api-gateway
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api-gateway/**'
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/_reusable-build.yaml
+    with:
+      service_name: api-gateway

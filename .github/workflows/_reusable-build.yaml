@@ -1,0 +1,39 @@
+name: Reusable Build and Push
+
+on: 
+  workflow_call:
+    inputs:
+      service_name:
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::427064007409:role/github-actions-ecr-push
+          aws-region: eu-central-1
+
+      - name: Login to ECR 
+        run: |
+          aws ecr get-login-password --region eu-central-1 | \
+          docker login --username AWS --password-stdin 427064007409.dkr.ecr.eu-central-1.amazonaws.com
+      
+      - name: Build and Push Image
+        working-directory: ${{ inputs.service_name }}
+        run: |
+          mvn compile jib:build \
+          -Djib.to.image=427064007409.dkr.ecr.eu-central-1.amazonaws.com/${{ inputs.service_name }}:${{ github.sha }}

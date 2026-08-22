@@ -1,0 +1,14 @@
+name: CI - discovery-server
+
+on: 
+  push: 
+    branches: [main]
+    paths:
+      - 'discovery-server/**'
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/_reusable-build.yaml
+    with: 
+      service_name: discovery-server
+
