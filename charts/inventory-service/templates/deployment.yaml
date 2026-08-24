@@ -34,5 +34,7 @@ spec:
                 secretKeyRef:
                   name: mysql-credentials
                   key: mysql-root-password
+            - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              value: "http://zipkin:9411/api/v2/spans"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

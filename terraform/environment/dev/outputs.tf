@@ -29,3 +29,7 @@ output "ecr_repository_urls" {
 output "github_actions_role_arn" {
   value = module.github_oidc.role_arn
 }
+
+output "lb_controller_role_arn" {
+  value = module.alb.role_arn
+}

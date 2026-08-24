@@ -37,5 +37,7 @@ spec:
                   key: mongodb-password
             - name: SPRING_DATA_MONGODB_URI
               value: "mongodb://$(MONGO_USERNAME):$(MONGO_PASSWORD)@mongodb:27017/product-service?authSource=admin"
+            - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              value: "http://zipkin:9411/api/v2/spans"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

@@ -21,9 +21,16 @@ module "github_oidc" {
   source = "../../modules/github-oidc"
 }
 
+module "alb" {
+  source             = "../../modules/alb"
+  cluster_name       = "ecommerce-eks"
+  oidc_provider_arn  = module.eks.oidc_provider_arn
+}
+
 resource "kubernetes_namespace_v1" "ecommerce" {
   metadata {
     name = "ecommerce"
   }
   depends_on = [module.eks]
 }
+

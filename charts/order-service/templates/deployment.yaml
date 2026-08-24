@@ -36,5 +36,7 @@ spec:
                   key: mysql-root-password
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
               value: "ecommerce-kafka-kafka-bootstrap:9092"
+            - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
+              value: "http://zipkin:9411/api/v2/spans"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}          
