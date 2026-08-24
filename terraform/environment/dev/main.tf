@@ -16,3 +16,14 @@ module "eks" {
 module "ecr" {
   source = "../../modules/ecr"
 }
+
+module "github_oidc" {
+  source = "../../modules/github-oidc"
+}
+
+resource "kubernetes_namespace_v1" "ecommerce" {
+  metadata {
+    name = "ecommerce"
+  }
+  depends_on = [module.eks]
+}
