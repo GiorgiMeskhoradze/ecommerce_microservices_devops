@@ -13,3 +13,4 @@ public class OrderServiceApplication {
 }
 // trigger
 // trigger 2
+// trigger sequence test
