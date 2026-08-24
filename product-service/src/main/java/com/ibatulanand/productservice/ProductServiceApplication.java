@@ -13,3 +13,4 @@ public class ProductServiceApplication {
 }
 // trigger
 // trigger 2
+// trigger sequence test
