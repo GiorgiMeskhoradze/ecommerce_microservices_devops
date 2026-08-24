@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: 427064007409.dkr.ecr.eu-central-1.amazonaws.com/notification-service
   pullPolicy: IfNotPresent
-  tag: "e54c1c52227af3696968040d5dbe25cb08ef4cb7"
+  tag: "f3779c204e8e618f52b20138bf4d47a782fd8d02"
 
 service:
   type: ClusterIP
