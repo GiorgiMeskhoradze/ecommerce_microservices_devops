@@ -18,3 +18,4 @@ public class NotificationServiceApplication {
         log.info("Received Notification for Order - {}", orderPlacedEvent.getOrderNumber());
     }
 }
+// trigger
