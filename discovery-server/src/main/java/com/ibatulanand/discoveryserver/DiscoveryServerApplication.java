@@ -14,3 +14,4 @@ public class DiscoveryServerApplication {
 }
 // trigger build
 // trigger
+// ci test 2
