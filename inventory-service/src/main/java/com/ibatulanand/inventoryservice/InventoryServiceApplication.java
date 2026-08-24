@@ -32,3 +32,4 @@ public class InventoryServiceApplication {
 
 }
 // trigger
+// trigger 2
