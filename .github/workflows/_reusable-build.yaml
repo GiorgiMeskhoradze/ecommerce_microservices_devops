@@ -7,10 +7,6 @@ on:
         required: true
         type: string
 
-concurrency:
-  group: git-push-values
-  cancel-in-progress: false
-
 permissions:
   id-token: write
   contents: write

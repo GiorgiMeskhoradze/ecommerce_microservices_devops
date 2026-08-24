@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - 'discovery-server/**'
+      
+concurrency:
+  group: git-push-values
+  cancel-in-progress: false
 
 jobs:
   call-build:

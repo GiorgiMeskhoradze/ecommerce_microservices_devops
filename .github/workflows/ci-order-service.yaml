@@ -6,6 +6,10 @@ on:
     paths:
       - 'order-service/**'
 
+concurrency:
+  group: git-push-values
+  cancel-in-progress: false
+
 jobs:
   call-build:
     uses: ./.github/workflows/_reusable-build.yaml
