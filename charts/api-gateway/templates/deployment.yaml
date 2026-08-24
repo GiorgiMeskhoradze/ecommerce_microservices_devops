@@ -21,7 +21,11 @@ spec:
           ports:
             - containerPort: {{ .Values.service.port }}
           env:
+            - name: SERVER_PORT
+              value: "{{ .Values.service.port }}"
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://discovery-server:8761/eureka"
+            - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI
+              value: "http://keycloak:8080/realms/spring-boot-microservices-realm"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
