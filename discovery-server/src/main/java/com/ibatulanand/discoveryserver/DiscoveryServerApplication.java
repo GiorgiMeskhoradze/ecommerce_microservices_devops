@@ -19,3 +19,4 @@ public class DiscoveryServerApplication {
 // retry with sonar fix 1787645169
 // retry with java version fix 1787645337
 // retry with java version fix 1787645460
+// retry sonar auth fix 1787645781
