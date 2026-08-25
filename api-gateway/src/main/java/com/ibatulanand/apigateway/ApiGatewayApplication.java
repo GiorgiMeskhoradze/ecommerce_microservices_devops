@@ -21,3 +21,4 @@ public class ApiGatewayApplication {
 // full pipeline run 1787646407
 // final full run 1787646682
 // final full run 1787648188
+// fix gateway routes 1787650598
