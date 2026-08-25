@@ -17,3 +17,4 @@ public class ProductServiceApplication {
 // trigger sequence test 2
 // final retry-loop test
 // trigger rebuild 1787644918
+// retry with sonar fix 1787645173
