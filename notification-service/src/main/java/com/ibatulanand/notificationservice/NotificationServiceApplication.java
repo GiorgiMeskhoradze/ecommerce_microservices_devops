@@ -24,3 +24,4 @@ public class NotificationServiceApplication {
 // trigger sequence test 2
 // final retry-loop test
 // trigger rebuild 1787644924
+// retry with sonar fix 1787645178
