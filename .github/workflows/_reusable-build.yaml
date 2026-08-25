@@ -53,9 +53,10 @@ jobs:
         env:
           JAVA_HOME: ${{ env.JAVA_HOME_17_X64 }}
         run: |
+          export PATH=$JAVA_HOME/bin:$PATH
           mvn compile jib:build \
           -Djib.to.image=427064007409.dkr.ecr.eu-central-1.amazonaws.com/${{ inputs.service_name }}:${{ github.sha }}
-
+          
       - name: Update Helm values with new image tag
         run: |
           sed -i "s|tag:.*|tag: \"${{ github.sha }}\"|" charts/${{ inputs.service_name }}/values.yaml
