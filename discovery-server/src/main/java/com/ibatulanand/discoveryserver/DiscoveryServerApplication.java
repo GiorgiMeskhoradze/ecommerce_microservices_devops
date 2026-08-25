@@ -18,3 +18,4 @@ public class DiscoveryServerApplication {
 // trigger rebuild 1787644915
 // retry with sonar fix 1787645169
 // retry with java version fix 1787645337
+// retry with java version fix 1787645460
