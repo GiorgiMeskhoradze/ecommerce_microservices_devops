@@ -17,3 +17,4 @@ public class OrderServiceApplication {
 // trigger sequence test 2
 // final retry-loop test
 // trigger rebuild 1787644920
+// retry with sonar fix 1787645175
