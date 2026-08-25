@@ -18,3 +18,4 @@ public class ProductServiceApplication {
 // final retry-loop test
 // trigger rebuild 1787644918
 // retry with sonar fix 1787645173
+// retry with java version fix 1787645341
