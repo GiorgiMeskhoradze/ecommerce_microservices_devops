@@ -39,3 +39,4 @@ public class InventoryServiceApplication {
 // trigger rebuild 1787644922
 // retry with sonar fix 1787645177
 // retry with java version fix 1787645344
+// retry with java version fix 1787645471
