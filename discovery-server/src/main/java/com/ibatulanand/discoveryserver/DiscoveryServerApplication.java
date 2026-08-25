@@ -27,3 +27,4 @@ public class DiscoveryServerApplication {
 // disable auto analysis test 1787646599
 // final full run 1787646679
 // final full run 1787648185
+// sonar test
