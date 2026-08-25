@@ -29,19 +29,5 @@ spec:
               value: "http://keycloak:8080/realms/spring-boot-microservices-realm"
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
               value: "http://zipkin:9411/api/v2/spans"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_2_ID
-              value: "discovery-server"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_2_URI
-              value: "http://discovery-server:8761"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_2_PREDICATES_0
-              value: "Path=/eureka/web"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_2_FILTERS_0
-              value: "SetPath=/"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_3_ID
-              value: "discovery-server-static"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_3_URI
-              value: "http://discovery-server:8761"
-            - name: SPRING_CLOUD_GATEWAY_ROUTES_3_PREDICATES_0
-              value: "Path=/eureka/**"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
