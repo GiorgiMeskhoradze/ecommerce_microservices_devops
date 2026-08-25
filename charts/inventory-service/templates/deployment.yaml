@@ -25,6 +25,8 @@ spec:
               value: "{{ .Values.service.port }}"
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://discovery-server:8761/eureka/"
+            - name: EUREKA_INSTANCE_PREFER_IP_ADDRESS
+              value: "true"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://mysql:3306/inventory_service?createDatabaseIfNotExist=true"
             - name: SPRING_DATASOURCE_USERNAME

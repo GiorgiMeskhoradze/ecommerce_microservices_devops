@@ -6,7 +6,7 @@ metadata:
     app: order-service
 spec:
   replicas: {{ .Values.replicaCount }}
-  selector: 
+  selector:
     matchLabels:
       app: order-service
   template:
@@ -25,6 +25,8 @@ spec:
               value: "{{ .Values.service.port }}"
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
               value: "http://discovery-server:8761/eureka/"
+            - name: EUREKA_INSTANCE_PREFER_IP_ADDRESS
+              value: "true"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://mysql:3306/order_service?createDatabaseIfNotExist=true"
             - name: SPRING_DATASOURCE_USERNAME
@@ -39,4 +41,4 @@ spec:
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
               value: "http://zipkin:9411/api/v2/spans"
           resources:
-            {{- toYaml .Values.resources | nindent 12 }}          
+            {{- toYaml .Values.resources | nindent 12 }}
