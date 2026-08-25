@@ -29,5 +29,9 @@ spec:
               value: "http://keycloak:8080/realms/spring-boot-microservices-realm"
             - name: MANAGEMENT_ZIPKIN_TRACING_ENDPOINT
               value: "http://zipkin:9411/api/v2/spans"
+            - name: SPRING_CLOUD_GATEWAY_ROUTES_2_URI
+              value: "http://discovery-server:8761"
+            - name: SPRING_CLOUD_GATEWAY_ROUTES_3_URI
+              value: "http://discovery-server:8761"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
