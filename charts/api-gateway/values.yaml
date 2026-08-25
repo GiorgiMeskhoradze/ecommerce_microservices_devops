@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: 427064007409.dkr.ecr.eu-central-1.amazonaws.com/api-gateway
   pullPolicy: IfNotPresent
-  tag: "037451fce2bb1ebac33437539d1dd5a55fd8c015"
+  tag: "2abbfcd85e617847c0514d30d4e7717f545deb1f"
 
 service: 
   type: ClusterIP
