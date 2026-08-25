@@ -37,26 +37,16 @@ jobs:
           aws ecr get-login-password --region eu-central-1 | \
           docker login --username AWS --password-stdin 427064007409.dkr.ecr.eu-central-1.amazonaws.com
 
-      - name: Debug Sonar Token
+      - name: SonarCloud Scan
+        working-directory: ${{ inputs.service_name }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          JAVA_HOME: ${{ env.JAVA_HOME_21_X64 }}
         run: |
-          if [ -z "$SONAR_TOKEN" ]; then
-            echo "SONAR_TOKEN IS EMPTY"
-          else
-            echo "SONAR_TOKEN IS SET, length: ${#SONAR_TOKEN}"
-          fi
-
-      # - name: SonarCloud Scan
-      #   working-directory: ${{ inputs.service_name }}
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      #     JAVA_HOME: ${{ env.JAVA_HOME_21_X64 }}
-      #   run: |
-      #     mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
-      #       -Dsonar.projectKey=GiorgiMeskhoradze_ecommerce_microservices_devops \
-      #       -Dsonar.organization=giorgimeskhoradze \
-      #       -Dsonar.host.url=https://sonarcloud.io
+          mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
+            -Dsonar.projectKey=GiorgiMeskhoradze_ecommerce_microservices_devops \
+            -Dsonar.organization=giorgimeskhoradze \
+            -Dsonar.host.url=https://sonarcloud.io
       
       - name: Build and Push Image
         working-directory: ${{ inputs.service_name }}
