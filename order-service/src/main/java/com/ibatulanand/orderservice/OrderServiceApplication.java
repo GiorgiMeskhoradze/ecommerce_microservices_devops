@@ -24,3 +24,4 @@ public class OrderServiceApplication {
 // final full run 1787646687
 // path fix retry 1787647090
 // lombok fix retry
+// skip tests fix
