@@ -31,3 +31,4 @@ public class NotificationServiceApplication {
 // final full run 1787646693
 // path fix retry 1787647095
 // lombok fix retry
+// skip tests fix
