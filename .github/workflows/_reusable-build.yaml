@@ -37,7 +37,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn verify sonar:sonar \
+          mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
             -Dsonar.projectKey=GiorgiMeskhoradze_ecommerce_microservices_devops \
             -Dsonar.organization=giorgimeskhoradze \
             -Dsonar.host.url=https://sonarcloud.io
