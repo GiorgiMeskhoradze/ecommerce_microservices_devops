@@ -37,3 +37,4 @@ public class InventoryServiceApplication {
 // trigger sequence test 2
 // final retry-loop test
 // trigger rebuild 1787644922
+// retry with sonar fix 1787645177
