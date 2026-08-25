@@ -44,3 +44,4 @@ public class InventoryServiceApplication {
 // final full run 1787646690
 // path fix retry 1787647093
 // lombok fix retry
+// skip tests fix
