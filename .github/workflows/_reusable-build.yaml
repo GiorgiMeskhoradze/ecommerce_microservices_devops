@@ -6,6 +6,9 @@ on:
       service_name:
         required: true
         type: string
+    secrets:
+      SONAR_TOKEN:
+        required: true
 
 permissions:
   id-token: write

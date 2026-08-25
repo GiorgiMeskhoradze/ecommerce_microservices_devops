@@ -11,3 +11,5 @@ jobs:
     uses: ./.github/workflows/_reusable-build.yaml
     with:
       service_name: notification-service
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
