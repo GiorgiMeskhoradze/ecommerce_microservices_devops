@@ -26,3 +26,4 @@ public class NotificationServiceApplication {
 // trigger rebuild 1787644924
 // retry with sonar fix 1787645178
 // retry with java version fix 1787645346
+// retry with java version fix 1787645473
