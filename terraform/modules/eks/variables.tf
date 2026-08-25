@@ -23,15 +23,15 @@ variable "node_min_size" {
 
 variable "node_max_size" {
   type    = number
-  default = 3
+  default = 4
 }
 
 variable "node_desired_size" {
   type    = number
-  default = 2
+  default = 3
 }
 
 variable "node_instance_types" {
   type    = list(string)
   default = ["c7i-flex.large"]
-}
+} 

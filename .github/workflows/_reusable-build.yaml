@@ -19,7 +19,9 @@ jobs:
 
       - uses: actions/setup-java@v5
         with:
-          java-version: '17'
+          java-version: |
+           17
+           21
           distribution: 'temurin'
 
       - uses: aws-actions/configure-aws-credentials@v4
@@ -36,6 +38,7 @@ jobs:
         working-directory: ${{ inputs.service_name }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          JAVA_HOME: ${{ env.JAVA_HOME_21_X64 }}
         run: |
           mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
             -Dsonar.projectKey=GiorgiMeskhoradze_ecommerce_microservices_devops \
@@ -44,6 +47,8 @@ jobs:
       
       - name: Build and Push Image
         working-directory: ${{ inputs.service_name }}
+        env:
+          JAVA_HOME: ${{ env.JAVA_HOME_17_X64 }}
         run: |
           mvn compile jib:build \
           -Djib.to.image=427064007409.dkr.ecr.eu-central-1.amazonaws.com/${{ inputs.service_name }}:${{ github.sha }}
