@@ -24,3 +24,4 @@ public class DiscoveryServerApplication {
 // debug retest 1787646301
 // full pipeline test 1787646368
 // full pipeline run 1787646405
+// disable auto analysis test 1787646599
