@@ -16,3 +16,4 @@ public class DiscoveryServerApplication {
 // trigger
 // ci test 2
 // trigger rebuild 1787644915
+// retry with sonar fix 1787645169
